@@ -10,7 +10,7 @@ Our robot was powered in tandem by a rechargeable 12V lithium ion battery pack a
 Our electrical was composed of multiple, small, distributed endpoint modules for individual functions placed closer to point of use. These modules can draw power and connect to:
 1. The Power Board  
 Powered by the 12V battery, the power board provides 12V, 5V, PWR_GND to end point modules that require energy to operate  
-2. The Data Board
+2. The Data Board  
 Powered by the 9V battery, the data board houses the bluepill and provides 5V, 3.3V, DATA_GND which allows for end point modules to connect to the logic of the robot
 
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/elec_diagram_tobeupdated.PNG)
@@ -41,7 +41,7 @@ Our electronics system experinced multiple iterations as we were constantly lear
 # 1. Power Board
 Input: 12V, GND  
 Output: 12V, 5V, PWR_GND  
-Purpose: Expose power to boards containing servos, motors, and sensors
+Purpose: Provide power to the robot
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/powerboard.jpg)
 Figure 2. Power Board Progression
 
@@ -52,7 +52,7 @@ To optimize the production of our 5V power source we transitioned to a more effi
 Input: 9V, GND, Sensor Signals  
 Output: 5V, 3.3V, DATA_GND, Motor/Servo/Sonar Output Signals  
 Purpose: Control the function of the robot by reading inputs and executing various tasks based on the code
-![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/blue_pill_map.jpg)
+![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/blue_pill_map.png)  
 Figure 3. Blue Pill Pinout
 
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/databoard.jpg)
@@ -61,7 +61,8 @@ Figure 4. Data Board Progression
 # 3. Sensor Board
 Input: 5V, 3.3V, PWR_GND, DATA_GND  
 Output: Sensor Signals  
-Purpose: Relay information about the robots enviroment (ie location, can detection, etc) to the blue pill
+Purpose: Relay information about the robots enviroment (ie location, can detection, etc) to the blue pill  
+
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/sensorboard.jpg)
 Figure 5. Sensor Board
 
@@ -72,7 +73,8 @@ Add an image of the data sheet of the IR sensors and explain the point of isolat
 # 4. Delivery Servo Board
 Input: 12V, 5V, PWR_GND, DATA_GND (double check)  
 Output: Servo Signals  
-Purpose: Rotates the hopper and releases cans
+Purpose: Rotates the hopper and releases cans  
+
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/servoboard.jpg)
 Figure 6. Servo Board
 
@@ -81,30 +83,28 @@ Explain:
 1. Use of opto isolators for noise reduction
 2. Importance of buck converter since servos have high current draw
 3. Add a video of the can delivery?
-**TODO**
-
 
 # 5. Motor Driver
 Input: 12V, 5V, PWR_GND, DATA_GND (double check)  
 Output: Motor Signals  
-Purpose: Drive the motors, resulting in traversal of the course
+Purpose: Drive the motors to move to robot  
+
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/motordriver.jpg)
 Figure 7. Motor Driver Board
 
 **TODO**
 Add an image of the H-bridge circuit and explain that it allows for the motors to turn CW and CCW
-**TODO**
 
 # 6. Roller Driver + Slapper Servo
-Input: 12V, 5V, PWR_GND, DATA_GND (double check)
-Output: Motor Signal, Servo Signal
-Purpose: Drive the rollers, slap in cans
+Input: 12V, 5V, PWR_GND, DATA_GND (double check)  
+Output: Motor Signal, Servo Signal  
+Purpose: Drive the rollers, slap in cans  
+
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/rollerdrive.jpg)
-Figure 8. Motor Driver Board
+Figure 8. Roller Driver Board
 
 **TODO**
 Maybe explain the need for an H-bridge since the rollers can spit out a can?
-**TODO**
 
 # 7. Start-up Button
 Input: (double check)
@@ -113,5 +113,12 @@ Purpose: Initiate Cometition Code
 
 **TODO**
 Add an image 
-**TODO**
 
+# Routing
+A newwork of 7 different boards requires a great deal of routing. Since one incorrect pin can result in the whole robot malfunctioning, it was essential that this process be done in an organized manner. Additionaly, considering ease of repedability during this process would save us a lot of time when making this 3 more times for the other robots.
+
+![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/routing.PNG)
+Figure 8. Spread sheet of routing
+
+![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/cables.jpg)
+Figure 8. Spread sheet of routing
