@@ -1,5 +1,5 @@
 title: "Closeted Summer Religious Activities"
-author: "Blog Author"
+author: "Carter, Rudy, Grayson, Sean"
 description: "Made with <b style=\"color: #f45;\">&lt;3</b>"
 permalink: /:title/
 lang: "en"
@@ -16,7 +16,7 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "index.html"}
+  - {title: "Elec", file: "/blog.md"}
   - {file: "README.md"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
