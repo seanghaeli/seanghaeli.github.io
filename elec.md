@@ -7,7 +7,8 @@ Our robot was powered in tandem by a rechargeable 12V lithium ion battery pack a
 
 **TODO**
 1. Clean up description for the general approach of our electronics below
-2. Update a nice diagram for the overview of our circuits
+2. Update a nice diagram for the overview of our circuits  
+
 TWO-TIER ELECTRICAL DESIGN PHILOSOPHY
 Bifurcation of electrical concerns into two high-level circuits: 
 (a) power distribution unit (PDU)
@@ -40,8 +41,8 @@ Our electronics system experinced multiple iterations as we were constantly lear
 These are our boards and the resulting lessons we learned about through their progression:
 
 **1. Power Board**
-Input: 12V, GND
-Output: 12V, 5V, PWR_GND
+Input: 12V, GND  
+Output: 12V, 5V, PWR_GND  
 Purpose: Expose power to boards containing servos, motors, and sensors
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/powerboard.jpg)
 Figure 2. Power Board Progression
@@ -50,8 +51,8 @@ Initially we were using a 7805 Linear Voltage Regulator to provide a 5V source w
 To optimize the production of our 5V power source we transitioned to a more efficient LM2596 Step Down Buck Converter
 
 **2. Data Board**
-Input: 9V, GND, Sensor Signals
-Output: 5V, 3.3V, DATA_GND, Motor/Servo/Sonar Output Signals
+Input: 9V, GND, Sensor Signals  
+Output: 5V, 3.3V, DATA_GND, Motor/Servo/Sonar Output Signals  
 Purpose: Control the function of the robot by reading inputs and executing various tasks based on the code
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/blue_pill_map.jpg)
 Figure 3. Blue Pill Pinout
@@ -60,8 +61,8 @@ Figure 3. Blue Pill Pinout
 Figure 4. Data Board Progression
 
 **3. Sensor Board**
-Input: 5V, 3.3V, PWR_GND, DATA_GND
-Output: Sensor Signals
+Input: 5V, 3.3V, PWR_GND, DATA_GND  
+Output: Sensor Signals  
 Purpose: Relay information about the robots enviroment (ie location, can detection, etc) to the blue pill
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/sensorboard.jpg)
 Figure 5. Sensor Board
@@ -71,8 +72,8 @@ Add an image of the data sheet of the IR sensors and explain the point of isolat
 **TODO**
 
 **4. Servo Board**
-Input: 12V, 5V, PWR_GND, DATA_GND (double check)
-Output: Servo Signals
+Input: 12V, 5V, PWR_GND, DATA_GND (double check)  
+Output: Servo Signals  
 Purpose: Rotates the hopper and releases cans
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/servoboard.jpg)
 Figure 6. Servo Board
@@ -85,8 +86,8 @@ Explain:
 
 
 **5. Motor Driver**
-Input: 12V, 5V, PWR_GND, DATA_GND (double check)
-Output: Motor Signals
+Input: 12V, 5V, PWR_GND, DATA_GND (double check)  
+Output: Motor Signals  
 Purpose: Drive the motors, resulting in traversal of the course
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/motordriver.jpg)
 Figure 7. Motor Driver Board
