@@ -5,7 +5,7 @@ title: "Home"
 
 This is robot summer.
 
-![alt text](https://github.com/seanghaeli/seanghaeli.github.io/blob/master/assets/images/rs_timeline.PNG)
+![rs](https://cdn-icons-png.flaticon.com/512/25/25231.png)
 
 Mohammed is a fully autonomous, multi-robot system built for the 2018 Engineering Physics Mars Rover Robot Competition and Design Challenge.
 
