@@ -32,6 +32,7 @@ or
 Figure 1. A mapping of the location of the boards on the robot
 or
 nice block diagram like Rudy made for design propsal
+
 **TODO**
 
 # Boards
@@ -39,8 +40,8 @@ Our electronics system experinced multiple iterations as we were constantly lear
 These are our boards and the resulting lessons we learned about through their progression:
 
 **1. Power Board**
-Input: 12V, GND from 12V battery
-Output: 12V, 5V, GND
+Input: 12V, GND
+Output: 12V, 5V, PWR_GND
 Purpose: Expose power to boards containing servos, motors, and sensors
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/powerboard.jpg)
 Figure 2. Power Board Progression
@@ -49,30 +50,68 @@ Initially we were using a 7805 Linear Voltage Regulator to provide a 5V source w
 To optimize the production of our 5V power source we transitioned to a more efficient LM2596 Step Down Buck Converter
 
 **2. Data Board**
-Input: 12V, GND from 12V battery
-Output: 12V, 5V, GND
-Purpose: Expose power to boards containing servos, motors, and sensors
-![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/powerboard.jpg)
-Figure x. Power Board Progression
+Input: 9V, GND, Sensor Signals
+Output: 5V, 3.3V, DATA_GND, Motor/Servo/Sonar Output Signals
+Purpose: Control the function of the robot by reading inputs and executing various tasks based on the code
+![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/blue_pill_map.jpg)
+Figure 3. Blue Pill Pinout
 
-Initially we were using a 7805 Linear Voltage Regulator to provide a 5V source which would waste a lot of energy in the form of heat.
-To optimize the production of our 5V power source we transitioned to a more efficient LM2596 Step Down Buck Converter
+![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/databoard.jpg)
+Figure 4. Data Board Progression
 
-3. Data Board (Blue pill, DATA_GND, 3.3V, 5V)
-4. Sensor Board (2 line sensor, encoder, can detection sensor, can delivery sensor)
-5. Motor Driver (2 h-bridges)
-6. Roller Driver (h-bridge, slapper servo)
-7. Servo board (2 deliver servos)
+**3. Sensor Board**
+Input: 5V, 3.3V, PWR_GND, DATA_GND
+Output: Sensor Signals
+Purpose: Relay information about the robots enviroment (ie location, can detection, etc) to the blue pill
+![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/sensorboard.jpg)
+Figure 5. Sensor Board
 
-# Circuits
-Our electronics system experinced multiple iterations as we were constantly finding ways to improve our circuitry
+**TODO**
+Add an image of the data sheet of the IR sensors and explain the point of isolated GND for Data singals (elimates conductive noise from motors and servos from influences data through opto isolators)
+**TODO**
+
+**4. Servo Board**
+Input: 12V, 5V, PWR_GND, DATA_GND (double check)
+Output: Servo Signals
+Purpose: Rotates the hopper and releases cans
+![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/servoboard.jpg)
+Figure 6. Servo Board
+
+**TODO**
+Explain:
+1. Use of opto isolators for noise reduction
+2. Importance of buck converter since servos have high current draw
+**TODO**
 
 
-# Prototyping
+**5. Motor Driver**
+Input: 12V, 5V, PWR_GND, DATA_GND (double check)
+Output: Motor Signals
+Purpose: Drive the motors, resulting in traversal of the course
+![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/motordriver.jpg)
+Figure 7. Motor Driver Board
 
+**TODO**
+Add an image of the H-bridge circuit and explain that it allows for the motors to turn CW and CCW
+**TODO**
 
+**6. Roller Driver + Slapper Servo**
+Input: 12V, 5V, PWR_GND, DATA_GND (double check)
+Output: Motor Signal, Servo Signal
+Purpose: Drive the rollers, slap in cans
+![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/rollerdrive.jpg)
+Figure 8. Motor Driver Board
 
-![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/powerboard.jpg)
-Figure x. Power Board
+**TODO**
+Maybe explain the need for an H-bridge since the rollers can spit out a can?
+**TODO**
 
+**7. Start Buttonr**
+Input: (double check)
+Output: Button Status
+Purpose: Initiate Cometition Code
+
+**TODO**
+Add an image 
+**TODO**
 
