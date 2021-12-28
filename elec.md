@@ -5,10 +5,74 @@ title: "Electrical"
 
 Our robot was powered in tandem by a rechargeable 12V lithium ion battery pack and a disposable 9V battery. The 12V was used for the realtively high current draw of 3 motors and 3 servos while the 9V battery was used to power a bluepill that controlled our robot.
 
+**TODO**
+1. Clean up description for the general approach of our electronics below
+2. Update a nice diagram for the overview of our circuits
+TWO-TIER ELECTRICAL DESIGN PHILOSOPHY
+Bifurcation of electrical concerns into two high-level circuits: 
+(a) power distribution unit (PDU)
+(b) data processing unit (DPU).
+Multiple, small, distributed endpoint modules for individual functions placed closer to point of use:
+Separate sources of noise generation
+Easier to troubleshoot, modify, and enhance electrical system
+Modules can be designed and bench-tested individually
+Allows for common electronic devices (e.g., gate driver ICs) to be installed upstream on brainboard for shared use amongst endpoint modules
+Easier to recreate, troubleshoot, and deploy for 4 robots
+
+ENDPOINT MODULE DESIGN PHILOSOPHY
+Each endpoint module
+Can draw power from any nominal power supply exposed on the brainboard
+Can close (sub-)circuits to either power ground (12V supply) or data ground (STM32 Bluepill) in parallel
+Is responsible for signal amplification and any endpoint-specific signal conditioning and that is not generalizable for other digital/analog signals
+
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/elec_map_2.PNG)
 Figure 1. A mapping of the location of the boards on the robot
-
 or
-
 ![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/elec_map_tobeupdated.PNG)
 Figure 1. A mapping of the location of the boards on the robot
+or
+nice block diagram like Rudy made for design propsal
+**TODO**
+
+# Boards
+Our electronics system experinced multiple iterations as we were constantly learning new ways to improve our circuitry.
+These are our boards and the resulting lessons we learned about through their progression:
+
+**1. Power Board**
+Input: 12V, GND from 12V battery
+Output: 12V, 5V, GND
+Purpose: Expose power to boards containing servos, motors, and sensors
+![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/powerboard.jpg)
+Figure 2. Power Board Progression
+
+Initially we were using a 7805 Linear Voltage Regulator to provide a 5V source which would waste a lot of energy in the form of heat.
+To optimize the production of our 5V power source we transitioned to a more efficient LM2596 Step Down Buck Converter
+
+**2. Data Board**
+Input: 12V, GND from 12V battery
+Output: 12V, 5V, GND
+Purpose: Expose power to boards containing servos, motors, and sensors
+![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/powerboard.jpg)
+Figure x. Power Board Progression
+
+Initially we were using a 7805 Linear Voltage Regulator to provide a 5V source which would waste a lot of energy in the form of heat.
+To optimize the production of our 5V power source we transitioned to a more efficient LM2596 Step Down Buck Converter
+
+3. Data Board (Blue pill, DATA_GND, 3.3V, 5V)
+4. Sensor Board (2 line sensor, encoder, can detection sensor, can delivery sensor)
+5. Motor Driver (2 h-bridges)
+6. Roller Driver (h-bridge, slapper servo)
+7. Servo board (2 deliver servos)
+
+# Circuits
+Our electronics system experinced multiple iterations as we were constantly finding ways to improve our circuitry
+
+
+# Prototyping
+
+
+
+![rs](https://raw.githubusercontent.com/seanghaeli/seanghaeli.github.io/master/assets/images/powerboard.jpg)
+Figure x. Power Board
+
+
